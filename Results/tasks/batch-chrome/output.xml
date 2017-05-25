@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170525 10:49:33.070" generator="Robot 3.0.2 (Python 2.7 on win32)">
+<suite source="C:\development\robot-scripts\amazon\Tests\Amazon.robot" id="s1" name="Amazon">
+<test id="s1-t1" name="User shoul login to checkout">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://www.amazon.com</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170525 10:49:33.286" level="INFO">Opening browser 'gc' to base url 'http://www.amazon.com'</msg>
+<status status="PASS" endtime="20170525 10:49:39.366" starttime="20170525 10:49:33.285"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170525 10:49:40.649" starttime="20170525 10:49:39.367"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170525 10:49:43.652" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170525 10:49:43.653" starttime="20170525 10:49:40.651"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=twotabsearchtextbox</arg>
+<arg>Ferrari480</arg>
+</arguments>
+<msg timestamp="20170525 10:49:43.655" level="INFO">Typing text 'Ferrari480' into text field 'id=twotabsearchtextbox'</msg>
+<status status="PASS" endtime="20170525 10:49:43.884" starttime="20170525 10:49:43.654"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>css=input.nav-input:nth-child(2)</arg>
+</arguments>
+<msg timestamp="20170525 10:49:43.886" level="INFO">Clicking button 'css=input.nav-input:nth-child(2)'.</msg>
+<status status="PASS" endtime="20170525 10:49:45.926" starttime="20170525 10:49:43.886"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170525 10:49:48.928" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170525 10:49:48.928" starttime="20170525 10:49:45.927"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Your search "Ferrari480" did not match any products.</arg>
+</arguments>
+<status status="PASS" endtime="20170525 10:49:48.961" starttime="20170525 10:49:48.929"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20170525 10:49:53.962" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170525 10:49:53.962" starttime="20170525 10:49:48.962"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170525 10:49:57.070" starttime="20170525 10:49:53.963"></status>
+</kw>
+<doc>Basic test case</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" endtime="20170525 10:49:57.072" critical="yes" starttime="20170525 10:49:33.284"></status>
+</test>
+<doc>demo test case</doc>
+<status status="PASS" endtime="20170525 10:49:57.074" starttime="20170525 10:49:33.072"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">Smoke</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Amazon" pass="1">Amazon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
