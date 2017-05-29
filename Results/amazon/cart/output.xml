@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170526 18:44:25.465" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\development\robot-scripts\amazon\Tests\Amazon.robot" id="s1" name="Amazon">
+<test id="s1-t1" name="Logged out user can add product to cart">
+<kw type="setup" name="Begin Web Test" library="Commons">
+<arguments>
+<arg>ff</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER_NAME}</arg>
+</arguments>
+<msg timestamp="20170526 18:44:25.662" level="INFO">Opening browser 'ff' to base url 'about:blank'</msg>
+<status status="PASS" endtime="20170526 18:44:30.968" starttime="20170526 18:44:25.661"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170526 18:44:30.988" starttime="20170526 18:44:30.969"></status>
+</kw>
+<status status="PASS" endtime="20170526 18:44:30.988" starttime="20170526 18:44:25.661"></status>
+</kw>
+<kw name="Given Amazon.Search Products" library="Amazon">
+<arguments>
+<arg>Cell Phones</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${SEARCH_KEY}</arg>
+</arguments>
+<msg timestamp="20170526 18:44:30.992" level="INFO">Cell Phones</msg>
+<status status="PASS" endtime="20170526 18:44:30.992" starttime="20170526 18:44:30.991"></status>
+</kw>
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>https://www.amazon.com</arg>
+</arguments>
+<msg timestamp="20170526 18:44:30.995" level="INFO">Opening url 'https://www.amazon.com'</msg>
+<status status="PASS" endtime="20170526 18:44:33.579" starttime="20170526 18:44:30.994"></status>
+</kw>
+<status status="PASS" endtime="20170526 18:44:33.579" starttime="20170526 18:44:30.993"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170526 18:44:36.580" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170526 18:44:36.580" starttime="20170526 18:44:33.580"></status>
+</kw>
+<kw name="Verify Loaded Page" library="LandingPage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Your Amazon.com</arg>
+</arguments>
+<status status="PASS" endtime="20170526 18:44:36.604" starttime="20170526 18:44:36.580"></status>
+</kw>
+<status status="PASS" endtime="20170526 18:44:36.604" starttime="20170526 18:44:36.580"></status>
+</kw>
+<kw name="Search For Product" library="TopNav">
+<arguments>
+<arg>${SEARCH_KEY}</arg>
+</arguments>
+<kw name="Enter Search Term" library="TopNav">
+<arguments>
+<arg>${SEARCH_KEY}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=twotabsearchtextbox</arg>
+<arg>${SEARCH_KEY}</arg>
+</arguments>
+<msg timestamp="20170526 18:44:36.606" level="INFO">Typing text 'Cell Phones' into text field 'id=twotabsearchtextbox'</msg>
+<status status="PASS" endtime="20170526 18:44:36.820" starttime="20170526 18:44:36.605"></status>
+</kw>
+<status status="PASS" endtime="20170526 18:44:36.820" starttime="20170526 18:44:36.605"></status>
+</kw>
+<kw name="Submit Search" library="TopNav">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id="nav-search"]/form/div[2]/div/input</arg>
+</arguments>
+<msg timestamp="20170526 18:44:36.822" level="INFO">Clicking button 'xpath=//*[@id="nav-search"]/form/div[2]/div/input'.</msg>
+<status status="PASS" endtime="20170526 18:44:36.945" starttime="20170526 18:44:36.821"></status>
+</kw>
+<status status="PASS" endtime="20170526 18:44:36.946" starttime="20170526 18:44:36.821"></status>
+</kw>
+<status status="PASS" endtime="20170526 18:44:36.946" starttime="20170526 18:44:36.604"></status>
+</kw>
+<kw name="Verify Search Completed" library="SearchProducts">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Cell Phones &amp; Accessories</arg>
+</arguments>
+<status status="PASS" endtime="20170526 18:44:36.979" starttime="20170526 18:44:36.947"></status>
+</kw>
+<status status="PASS" endtime="20170526 18:44:36.979" starttime="20170526 18:44:36.946"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170526 18:44:39.980" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170526 18:44:39.980" starttime="20170526 18:44:36.980"></status>
+</kw>
+<status status="PASS" endtime="20170526 18:44:39.980" starttime="20170526 18:44:30.990"></status>
+</kw>
+<kw name="then Amazon.Select Product From Search Results" library="Amazon">
+<kw name="Select Product Category" library="SearchProducts">
+<doc>Selecting product from product list..</doc>
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.scrollTo(0,1000)</arg>
+</arguments>
+<msg timestamp="20170526 18:44:39.982" level="INFO">Executing JavaScript:
+window.scrollTo(0,1000)</msg>
+<status status="PASS" endtime="20170526 18:44:39.992" starttime="20170526 18:44:39.982"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170526 18:44:42.992" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170526 18:44:42.992" starttime="20170526 18:44:39.992"></status>
+</kw>
+<kw name="Click Image" library="Selenium2Library">
+<doc>Clicks an image found by `locator`.</doc>
+<arguments>
+<arg>Unlocked Cell Phones</arg>
+</arguments>
+<msg timestamp="20170526 18:44:42.992" level="INFO">Clicking image 'Unlocked Cell Phones'.</msg>
+<status status="PASS" endtime="20170526 18:44:43.113" starttime="20170526 18:44:42.992"></status>
+</kw>
+<status status="PASS" endtime="20170526 18:44:43.113" starttime="20170526 18:44:39.981"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20170526 18:44:48.114" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170526 18:44:48.114" starttime="20170526 18:44:43.114"></status>
+</kw>
+<kw name="Verify Products Page Loaded" library="Product">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Unlocked Cell Phones</arg>
+</arguments>
+<status status="PASS" endtime="20170526 18:44:48.146" starttime="20170526 18:44:48.115"></status>
+</kw>
+<status status="PASS" endtime="20170526 18:44:48.146" starttime="20170526 18:44:48.114"></status>
+</kw>
+<status status="PASS" endtime="20170526 18:44:48.146" starttime="20170526 18:44:39.981"></status>
+</kw>
+<kw name="and Amazon.Add Product To Cart" library="Amazon">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170526 18:44:51.148" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170526 18:44:51.148" starttime="20170526 18:44:48.147"></status>
+</kw>
+<kw name="Select Product" library="Product">
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.scrollTo(0,800)</arg>
+</arguments>
+<msg timestamp="20170526 18:44:51.150" level="INFO">Executing JavaScript:
+window.scrollTo(0,800)</msg>
+<status status="PASS" endtime="20170526 18:44:51.164" starttime="20170526 18:44:51.150"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//*[@id='result_0']/div/div[2]/div/div/a/img</arg>
+</arguments>
+<msg timestamp="20170526 18:44:51.165" level="INFO">Clicking element 'xpath=.//*[@id='result_0']/div/div[2]/div/div/a/img'.</msg>
+<status status="PASS" endtime="20170526 18:44:51.426" starttime="20170526 18:44:51.165"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Moto G Plus (5th Generation) - Lunar Gray - 32 GB - Unlocked - Prime Exclusive - with Lockscreen Offers &amp; Ads</arg>
+</arguments>
+<status status="PASS" endtime="20170526 18:44:51.465" starttime="20170526 18:44:51.427"></status>
+</kw>
+<status status="PASS" endtime="20170526 18:44:51.465" starttime="20170526 18:44:51.148"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20170526 18:44:56.465" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170526 18:44:56.465" starttime="20170526 18:44:51.465"></status>
+</kw>
+<kw name="Check Product Details" library="Product">
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.scrollTo(0,200)</arg>
+</arguments>
+<msg timestamp="20170526 18:44:56.466" level="INFO">Executing JavaScript:
+window.scrollTo(0,200)</msg>
+<status status="PASS" endtime="20170526 18:44:56.501" starttime="20170526 18:44:56.466"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element specified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//div[@id='altImages']/ul/child::li[2]/span</arg>
+</arguments>
+<msg timestamp="20170526 18:44:56.501" level="INFO">Simulating Mouse Over on element 'xpath=.//div[@id='altImages']/ul/child::li[2]/span'</msg>
+<status status="PASS" endtime="20170526 18:44:56.858" starttime="20170526 18:44:56.501"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170526 18:44:58.858" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170526 18:44:58.858" starttime="20170526 18:44:56.858"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element specified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//div[@id='altImages']/ul/child::li[3]/span</arg>
+</arguments>
+<msg timestamp="20170526 18:44:58.858" level="INFO">Simulating Mouse Over on element 'xpath=.//div[@id='altImages']/ul/child::li[3]/span'</msg>
+<status status="PASS" endtime="20170526 18:44:59.136" starttime="20170526 18:44:58.858"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170526 18:45:01.136" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170526 18:45:01.136" starttime="20170526 18:44:59.136"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element specified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//div[@id='altImages']/ul/child::li[4]/span</arg>
+</arguments>
+<msg timestamp="20170526 18:45:01.137" level="INFO">Simulating Mouse Over on element 'xpath=.//div[@id='altImages']/ul/child::li[4]/span'</msg>
+<status status="PASS" endtime="20170526 18:45:01.471" starttime="20170526 18:45:01.136"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170526 18:45:03.472" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170526 18:45:03.472" starttime="20170526 18:45:01.472"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element specified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//div[@id='altImages']/ul/child::li[5]/span</arg>
+</arguments>
+<msg timestamp="20170526 18:45:03.472" level="INFO">Simulating Mouse Over on element 'xpath=.//div[@id='altImages']/ul/child::li[5]/span'</msg>
+<status status="PASS" endtime="20170526 18:45:03.757" starttime="20170526 18:45:03.472"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170526 18:45:05.758" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170526 18:45:05.758" starttime="20170526 18:45:03.758"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element specified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//div[@id='altImages']/ul/child::li[6]/span</arg>
+</arguments>
+<msg timestamp="20170526 18:45:05.758" level="INFO">Simulating Mouse Over on element 'xpath=.//div[@id='altImages']/ul/child::li[6]/span'</msg>
+<status status="PASS" endtime="20170526 18:45:06.040" starttime="20170526 18:45:05.758"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170526 18:45:08.041" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170526 18:45:08.041" starttime="20170526 18:45:06.041"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element specified by `locator`.</doc>
+<arguments>
+<arg>xpath=.//div[@id='altImages']/ul/child::li[7]/span</arg>
+</arguments>
+<msg timestamp="20170526 18:45:08.041" level="INFO">Simulating Mouse Over on element 'xpath=.//div[@id='altImages']/ul/child::li[7]/span'</msg>
+<status status="PASS" endtime="20170526 18:45:08.342" starttime="20170526 18:45:08.041"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20170526 18:45:13.343" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170526 18:45:13.343" starttime="20170526 18:45:08.343"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=a-autoid-9-announce</arg>
+</arguments>
+<msg timestamp="20170526 18:45:13.343" level="INFO">Clicking button 'id=a-autoid-9-announce'.</msg>
+<status status="PASS" endtime="20170526 18:45:13.485" starttime="20170526 18:45:13.343"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170526 18:45:16.486" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170526 18:45:16.486" starttime="20170526 18:45:13.486"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=add-to-cart-button</arg>
+</arguments>
+<msg timestamp="20170526 18:45:16.486" level="INFO">Clicking button 'id=add-to-cart-button'.</msg>
+<status status="PASS" endtime="20170526 18:45:16.550" starttime="20170526 18:45:16.486"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10s</arg>
+</arguments>
+<msg timestamp="20170526 18:45:26.550" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" endtime="20170526 18:45:26.550" starttime="20170526 18:45:16.550"></status>
+</kw>
+<status status="PASS" endtime="20170526 18:45:26.550" starttime="20170526 18:44:56.465"></status>
+</kw>
+<status status="PASS" endtime="20170526 18:45:26.550" starttime="20170526 18:44:48.147"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Commons">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170526 18:45:26.994" starttime="20170526 18:45:26.551"></status>
+</kw>
+<status status="PASS" endtime="20170526 18:45:26.994" starttime="20170526 18:45:26.551"></status>
+</kw>
+<tags>
+<tag>cart</tag>
+</tags>
+<status status="PASS" endtime="20170526 18:45:26.995" critical="yes" starttime="20170526 18:44:25.659"></status>
+</test>
+<doc>This is some basic info about the whole suite</doc>
+<status status="PASS" endtime="20170526 18:45:26.996" starttime="20170526 18:44:25.468"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">cart</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Amazon" pass="1">Amazon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

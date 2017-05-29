@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170528 15:00:23.739" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\development\robot-scripts\amazon\Tests\Amazon.robot" id="s1" name="Amazon">
+<test id="s1-t1" name="Logged out user can search for products">
+<kw type="setup" name="Begin Web Test" library="Commons">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170528 15:00:23.968" level="INFO">Opening browser 'ff' to base url 'about:blank'</msg>
+<status status="PASS" endtime="20170528 15:00:29.289" starttime="20170528 15:00:23.967"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170528 15:00:29.307" starttime="20170528 15:00:29.290"></status>
+</kw>
+<status status="PASS" endtime="20170528 15:00:29.309" starttime="20170528 15:00:23.966"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170528 15:00:32.314" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170528 15:00:32.314" starttime="20170528 15:00:29.312"></status>
+</kw>
+<kw name="Search Products" library="AmazonApp">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20170528 15:00:32.316" level="INFO">Opening url 'https://www.amazon.com'</msg>
+<status status="PASS" endtime="20170528 15:00:34.102" starttime="20170528 15:00:32.316"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>AmazonHomePage.jpg</arg>
+</arguments>
+<msg timestamp="20170528 15:00:34.518" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="AmazonHomePage.jpg"&gt;&lt;img src="AmazonHomePage.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170528 15:00:34.518" starttime="20170528 15:00:34.102"></status>
+</kw>
+<status status="PASS" endtime="20170528 15:00:34.519" starttime="20170528 15:00:32.315"></status>
+</kw>
+<kw name="Set Screenshot Directory" library="Selenium2Library">
+<doc>Sets the root output directory for captured screenshots.</doc>
+<arguments>
+<arg>Results/amazon/screenshots</arg>
+</arguments>
+<status status="PASS" endtime="20170528 15:00:34.520" starttime="20170528 15:00:34.519"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>AmazonHomePgae.jpg</arg>
+</arguments>
+<msg timestamp="20170528 15:00:34.830" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../Results/amazon/screenshots/AmazonHomePgae.jpg"&gt;&lt;img src="../../Results/amazon/screenshots/AmazonHomePgae.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170528 15:00:34.832" starttime="20170528 15:00:34.520"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20170528 15:00:37.833" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170528 15:00:37.833" starttime="20170528 15:00:34.832"></status>
+</kw>
+<kw name="Verify Loaded Page" library="LandingPage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Your Amazon.com</arg>
+</arguments>
+<status status="PASS" endtime="20170528 15:00:37.854" starttime="20170528 15:00:37.833"></status>
+</kw>
+<status status="PASS" endtime="20170528 15:00:37.854" starttime="20170528 15:00:37.833"></status>
+</kw>
+<kw name="Search For Product" library="TopNav">
+<kw name="Enter Search Term" library="TopNav">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${TOP_NAV_SEARCH_BAR}</arg>
+<arg>${SEARCH_KEY}</arg>
+</arguments>
+<msg timestamp="20170528 15:00:37.856" level="INFO">Typing text 'iphone 7s plus' into text field 'id=twotabsearchtextbox'</msg>
+<status status="PASS" endtime="20170528 15:00:38.105" starttime="20170528 15:00:37.856"></status>
+</kw>
+<status status="PASS" endtime="20170528 15:00:38.105" starttime="20170528 15:00:37.855"></status>
+</kw>
+<kw name="Submit Search" library="TopNav">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>${TOP_NAV_SEARCH_BUTTON}</arg>
+</arguments>
+<msg timestamp="20170528 15:00:38.107" level="INFO">Clicking button 'xpath=//*[@id="nav-search"]/form/div[2]/div/input'.</msg>
+<status status="PASS" endtime="20170528 15:00:38.243" starttime="20170528 15:00:38.106"></status>
+</kw>
+<status status="PASS" endtime="20170528 15:00:38.244" starttime="20170528 15:00:38.106"></status>
+</kw>
+<status status="PASS" endtime="20170528 15:00:38.244" starttime="20170528 15:00:37.855"></status>
+</kw>
+<kw name="Verify Search Completed" library="SearchProducts">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>"${SEARCH_KEY}"</arg>
+</arguments>
+<status status="PASS" endtime="20170528 15:00:38.648" starttime="20170528 15:00:38.246"></status>
+</kw>
+<status status="PASS" endtime="20170528 15:00:38.649" starttime="20170528 15:00:38.245"></status>
+</kw>
+<status status="PASS" endtime="20170528 15:00:38.649" starttime="20170528 15:00:32.315"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Commons">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170528 15:00:38.969" starttime="20170528 15:00:38.652"></status>
+</kw>
+<status status="PASS" endtime="20170528 15:00:38.969" starttime="20170528 15:00:38.651"></status>
+</kw>
+<tags>
+<tag>search</tag>
+</tags>
+<status status="PASS" endtime="20170528 15:00:38.970" critical="yes" starttime="20170528 15:00:23.965"></status>
+</test>
+<doc>This is some basic info about the whole suite</doc>
+<status status="PASS" endtime="20170528 15:00:38.972" starttime="20170528 15:00:23.742"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">search</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Amazon" pass="1">Amazon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

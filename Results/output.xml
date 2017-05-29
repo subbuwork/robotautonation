@@ -1,82 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20170525 10:20:13.809" generator="Robot 3.0.2 (Python 2.7 on win32)">
+<robot generated="20170528 07:06:51.948" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
 <suite source="C:\development\robot-scripts\amazon\Tests\Amazon.robot" id="s1" name="Amazon">
-<test id="s1-t1" name="User shoul login to checkout">
+<test id="s1-t1" name="Logged out user can search for products">
+<kw type="setup" name="Begin Web Test" library="Commons">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
 <arguments>
-<arg>http://www.amazon.com</arg>
-<arg>ff</arg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20170525 10:20:14.011" level="INFO">Opening browser 'ff' to base url 'http://www.amazon.com'</msg>
-<status status="PASS" endtime="20170525 10:20:21.967" starttime="20170525 10:20:14.011"></status>
+<msg timestamp="20170528 07:06:52.166" level="INFO">Opening browser 'ff' to base url 'about:blank'</msg>
+<status status="PASS" endtime="20170528 07:06:59.623" starttime="20170528 07:06:52.166"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20170525 10:20:22.006" starttime="20170525 10:20:21.973"></status>
+<status status="PASS" endtime="20170528 07:06:59.658" starttime="20170528 07:06:59.624"></status>
+</kw>
+<status status="PASS" endtime="20170528 07:06:59.659" starttime="20170528 07:06:52.165"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3s</arg>
 </arguments>
-<msg timestamp="20170525 10:20:25.221" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" endtime="20170525 10:20:25.221" starttime="20170525 10:20:22.219"></status>
+<msg timestamp="20170528 07:07:02.661" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170528 07:07:02.661" starttime="20170528 07:06:59.660"></status>
 </kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<arguments>
-<arg>id=twotabsearchtextbox</arg>
-<arg>Ferrari450</arg>
-</arguments>
-<msg timestamp="20170525 10:20:25.222" level="INFO">Typing text 'Ferrari450' into text field 'id=twotabsearchtextbox'</msg>
-<status status="PASS" endtime="20170525 10:20:25.448" starttime="20170525 10:20:25.221"></status>
+<kw name="Amazon.Search Products">
+<msg timestamp="20170528 07:07:02.666" level="FAIL">No keyword with name 'Amazon.Search Products' found.</msg>
+<status status="FAIL" endtime="20170528 07:07:02.666" starttime="20170528 07:07:02.666"></status>
 </kw>
-<kw name="Click Button" library="Selenium2Library">
-<doc>Clicks a button identified by `locator`.</doc>
-<arguments>
-<arg>css=input.nav-input:nth-child(2)</arg>
-</arguments>
-<msg timestamp="20170525 10:20:25.453" level="INFO">Clicking button 'css=input.nav-input:nth-child(2)'.</msg>
-<status status="PASS" endtime="20170525 10:20:25.595" starttime="20170525 10:20:25.453"></status>
+<kw type="teardown" name="End Web Test" library="Commons">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170528 07:07:02.861" starttime="20170528 07:07:02.667"></status>
 </kw>
-<kw name="Wait Until Page Contains" library="Selenium2Library">
-<doc>Waits until `text` appears on current page.</doc>
-<arguments>
-<arg>Your search "Ferrari450" did not match any products.</arg>
-</arguments>
-<status status="PASS" endtime="20170525 10:20:26.028" starttime="20170525 10:20:25.595"></status>
+<status status="PASS" endtime="20170528 07:07:02.862" starttime="20170528 07:07:02.667"></status>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>10s</arg>
-</arguments>
-<msg timestamp="20170525 10:20:36.030" level="INFO">Slept 10 seconds</msg>
-<status status="PASS" endtime="20170525 10:20:36.030" starttime="20170525 10:20:26.029"></status>
-</kw>
-<kw name="Click Link" library="Selenium2Library">
-<doc>Clicks a link identified by locator.</doc>
-<arguments>
-<arg>css=html body div#adBlock table.adsWrapper tbody tr.a_.c_ td div.leftColumnContentWrapper span.title a.titleLink.d_</arg>
-</arguments>
-<msg timestamp="20170525 10:20:36.031" level="INFO">Clicking link 'css=html body div#adBlock table.adsWrapper tbody tr.a_.c_ td div.leftColumnContentWrapper span.title a.titleLink.d_'.</msg>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20170525 10:20:36.131" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20170525 10:20:36.132" starttime="20170525 10:20:36.037"></status>
-</kw>
-<msg timestamp="20170525 10:20:36.133" level="FAIL">ValueError: Element locator 'css=html body div#adBlock table.adsWrapper tbody tr.a_.c_ td div.leftColumnContentWrapper span.title a.titleLink.d_' did not match any elements.</msg>
-<status status="FAIL" endtime="20170525 10:20:36.133" starttime="20170525 10:20:36.031"></status>
-</kw>
-<doc>Basic test case</doc>
 <tags>
-<tag>Smoke</tag>
+<tag>search</tag>
 </tags>
-<status status="FAIL" endtime="20170525 10:20:36.134" critical="yes" starttime="20170525 10:20:14.010">ValueError: Element locator 'css=html body div#adBlock table.adsWrapper tbody tr.a_.c_ td div.leftColumnContentWrapper span.title a.titleLink.d_' did not match any elements.</status>
+<status status="FAIL" endtime="20170528 07:07:02.862" critical="yes" starttime="20170528 07:06:52.164">No keyword with name 'Amazon.Search Products' found.</status>
 </test>
-<doc>demo test case</doc>
-<status status="FAIL" endtime="20170525 10:20:36.137" starttime="20170525 10:20:13.811"></status>
+<doc>This is some basic info about the whole suite</doc>
+<status status="FAIL" endtime="20170528 07:07:02.864" starttime="20170528 07:06:51.951"></status>
 </suite>
 <statistics>
 <total>
@@ -84,12 +51,13 @@
 <stat fail="1" pass="0">All Tests</stat>
 </total>
 <tag>
-<stat fail="1" pass="0">Smoke</stat>
+<stat fail="1" pass="0">search</stat>
 </tag>
 <suite>
 <stat fail="1" id="s1" name="Amazon" pass="0">Amazon</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20170528 07:06:52.159" level="ERROR">Error in file 'C:\development\robot-scripts\amazon\Tests\Amazon.robot': Resource file 'Resources\Amazon.robot' does not exist.</msg>
 </errors>
 </robot>

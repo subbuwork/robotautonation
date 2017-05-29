@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170527 06:50:29.828" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\development\robot-scripts\amazon\Tests\ListVariables.robot" id="s1" name="ListVariables">
+<test id="s1-t1" name="List Vairaiables Test Case">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>Item1</arg>
+<arg>Item2</arg>
+<arg>Item3</arg>
+<arg>Item4</arg>
+</arguments>
+<assign>
+<var>@{list_variables}</var>
+</assign>
+<msg timestamp="20170527 06:50:30.002" level="INFO">@{list_variables} = [ Item1 | Item2 | Item3 | Item4 ]</msg>
+<status status="PASS" endtime="20170527 06:50:30.002" starttime="20170527 06:50:30.001"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>@{list_variables}[0]</arg>
+</arguments>
+<msg timestamp="20170527 06:50:30.003" level="INFO">Item1</msg>
+<status status="PASS" endtime="20170527 06:50:30.003" starttime="20170527 06:50:30.002"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>@{list_variables}[1]</arg>
+</arguments>
+<msg timestamp="20170527 06:50:30.004" level="INFO">Item2</msg>
+<status status="PASS" endtime="20170527 06:50:30.004" starttime="20170527 06:50:30.003"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>@{list_variables}[2]</arg>
+</arguments>
+<msg timestamp="20170527 06:50:30.004" level="INFO">Item3</msg>
+<status status="PASS" endtime="20170527 06:50:30.005" starttime="20170527 06:50:30.004"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>@{list_variables}[3]</arg>
+</arguments>
+<msg timestamp="20170527 06:50:30.005" level="INFO">Item4</msg>
+<status status="PASS" endtime="20170527 06:50:30.005" starttime="20170527 06:50:30.005"></status>
+</kw>
+<tags>
+<tag>demo</tag>
+</tags>
+<status status="PASS" endtime="20170527 06:50:30.006" critical="yes" starttime="20170527 06:50:30.000"></status>
+</test>
+<status status="PASS" endtime="20170527 06:50:30.007" starttime="20170527 06:50:29.831"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">demo</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="ListVariables" pass="1">ListVariables</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
